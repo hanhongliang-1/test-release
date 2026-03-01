@@ -17,11 +17,13 @@ Chat history is a BUFFER. This file is STORAGE.
 - [x] 安装 elite-longterm-memory skill
 - [x] 配置 memorySearch (使用本地 embedding)
 - [x] 初始化 SESSION-STATE.md
-- [ ] 测试语义搜索功能
-- [ ] 更新 AGENTS.md 添加记忆读取规则
+- [x] 测试语义搜索功能 ✅
+- [x] 更新 AGENTS.md 添加记忆读取规则 ✅
+- [x] 完善 MEMORY.md 文档 ✅
 - [ ] 恢复 CTO/CFO/CMO 任务（之前中断）
 
 ## Recent Decisions
+- **2026-03-02 02:15**: 文档和配置完善完成，准备恢复业务任务
 - **2026-03-02 01:09**: 启用 elite-longterm-memory 完整功能（含本地 embedding）
 - **2026-03-01 14:06**: Gateway 重启导致 CTO 任务中断，已修复配置避免自动重启
 
