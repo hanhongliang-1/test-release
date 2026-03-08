@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "skills": {
+    "feishu-doc": {
+      "version": "1.2.7",
+      "installedAt": 1772557988331
+    },
+    "feishu-drive": {
+      "version": "1.0.0",
+      "installedAt": 1772557997030
+    },
+    "finance-lite": {
+      "version": "1.0.1",
+      "installedAt": 1772593507338
+    },
+    "feishu-calendar": {
+      "version": "1.0.0",
+      "installedAt": 1772594060481
+    },
+    "daily-report-writer": {
+      "version": "1.0.0",
+      "installedAt": 1772597405689
+    },
+    "business-model-canvas": {
+      "version": "0.1.0",
+      "installedAt": 1772599030636
+    },
+    "marketing-mode": {
+      "version": "1.0.0",
+      "installedAt": 1772599151339
+    }
+  }
+}

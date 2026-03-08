@@ -12,9 +12,8 @@ Before doing anything else:
 
 1. Read `SOUL.md` — this is who you are
 2. Read `USER.md` — this is who you're helping
-3. **Read `SESSION-STATE.md`** — active working memory (survives compaction)
-4. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
-5. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
+3. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
+4. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
 
 Don't ask permission. Just do it.
 
@@ -22,47 +21,8 @@ Don't ask permission. Just do it.
 
 You wake up fresh each session. These files are your continuity:
 
-### 🧠 3-Layer Memory Architecture
-
-1. **HOT RAM** (`SESSION-STATE.md`) — Active working memory
-   - Survives compaction, restarts, distractions
-   - Write BEFORE responding (WAL protocol)
-   - Contains: current task, key context, pending actions, recent decisions
-
-2. **WARM STORE** (`memory/YYYY-MM-DD.md`) — Daily logs
-   - Raw chronological records of what happened
-   - Append-only, never edit past entries
-   - Create `memory/` directory if needed
-
-3. **COLD ARCHIVE** (`MEMORY.md`) — Curated long-term wisdom
-   - Distilled insights from daily logs
-   - ONLY load in main session (security: don't leak to groups)
-   - Update periodically during heartbeats
-
-### 📝 Write-Ahead Log (WAL) Protocol
-
-**Critical:** Write state BEFORE responding, not after!
-
-| Trigger | Action |
-|---------|--------|
-| User states preference | Write to SESSION-STATE.md → then respond |
-| User makes decision | Write to SESSION-STATE.md → then respond |
-| User gives deadline | Write to SESSION-STATE.md → then respond |
-| User corrects you | Write to SESSION-STATE.md → then respond |
-
-**Why?** If you respond first and crash/compact before saving, context is lost.
-
-### 🔍 Semantic Search (Available)
-
-You have `memory_search` tool enabled with local Qwen embedding:
-- Query across all memory files semantically
-- Use for: "what did we decide about X?", "find notes on Y"
-- Returns relevant snippets with scores
-
-**Example:**
-```bash
-openclaw memory search "项目进度"  # Find project status notes
-```
+- **Daily notes:** `memory/YYYY-MM-DD.md` (create `memory/` if needed) — raw logs of what happened
+- **Long-term:** `MEMORY.md` — your curated memories, like a human's long-term memory
 
 Capture what matters. Decisions, context, things to remember. Skip the secrets unless asked to keep them.
 
@@ -250,3 +210,28 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
+
+---
+
+## Self-Improving Mode
+
+**Current mode:** Active (3 次重复后主动建议模式)
+
+### Available Modes
+
+- **Passive:** Only learn from explicit corrections (默认)
+- **Active:** Suggest patterns after 3x repetition, auto-promote to HOT (当前)
+- **Strict:** Require confirmation for every entry before logging
+
+### Configuration
+
+Memory location: `~/self-improving/`
+- HOT tier (always loaded): memory.md ≤100 lines
+- WARM tier (on-demand): projects/, domains/ ≤200 lines each  
+- COLD tier (archived): archive/ unlimited
+
+### Auto-Decay Rules
+
+- 7 days unused → demote to WARM
+- 30 days unused → archive to COLD  
+- Hard rules (security) → never decay

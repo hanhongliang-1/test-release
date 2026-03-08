@@ -1,86 +1,51 @@
-# MEMORY.md - Long-Term Memory
+# MEMORY.md - AI Company CEO Agent
 
-_Curated wisdom, key decisions, and lessons learned._
+## Overview
+- Last updated: 2026-03-04 15:10
+- Status: **Active** - Skill ecosystem deployment complete
 
-## Company Foundation
+## System Configurations
+### 2026-03-04 10:17: Context Compression Optimized
+- Updated `openclaw.json` compaction settings for better long-term conversation management:
+  - `reserveTokens`: 20000 (increased safety margin)
+  - `keepRecentTokens`: 25000 (preserve more recent context)
+  - `memoryFlush.enabled`: true (auto-save before compression)
+  - `softThresholdTokens`: 8000 (early trigger for memory persistence)
+- Rationale: Balance between context retention and safety margin for CEO-level operations
 
-### Launch Date: 2026-02-28
-- **Product**: 社交媒体内容自动化 (Social Media Content Automation)
-- **Budget**: $500 lean startup allocation
-- **Team Structure**: CEO + CTO + CMO + CFO (all independent Agents)
+### 2026-03-04 15:05: Feishu Credentials Configured
+- Created `workspace_stock/.env` with Feishu app credentials (app_id, app_secret)
+- Updated `skills/feishu-doc/config.json` with same credentials
+- ⚠️ Calendar API permissions pending founder action (scopes: `calendar:calendar:readonly`, `calendar:calendar`)
 
-### Core Principles
-1. **Profit First** - All decisions evaluated by financial health and long-term profitability
-2. **Data-Driven** - No major decision without data; collect market intelligence first
-3. **Risk Awareness** - Pause and escalate when risks are uncontrollable
-4. **Transparent Logging** - All important decisions logged for traceability
+## Skill Ecosystem Deployment (2026-03-04 14:58)
+### New Skills Installed (5)
+1. **finance-lite** - 轻量级财务 + 每日宏观市场简报 (requires FINNHUB_API_KEY)
+2. **feishu-calendar** - 飞书日历管理与同步 (requires calendar API permissions)
+3. **daily-report-writer** - 日报自动生成工具 ✅ Tested & Working
+4. **business-model-canvas** - 商业模式画布分析框架 ✅ Tested & Applied
+5. **marketing-mode** - 23 个营销技能工具箱
 
-## Key Decisions Log
+### Core Skills (Already Installed, Not Counted)
+- agent-council, clawddocs, elite-longterm-memory, feishu-doc, feishu-drive, ontology, playwright, self-improving
 
-### 2026-02-28
-- ✅ Approved $500 lean startup budget (A Plan)
-- ✅ Product direction: Social media content automation for SMBs/personal brands
-- ✅ Team assembled: CTO (TechNinja), CMO (GrowthHacker), CFO (MoneyGuard)
-- ✅ Decision authority: CEO has $5,000 autonomous spending limit per department
+### Total Skills
+- **13 skills** installed and ready for business operations
 
-## Lessons Learned
+## Cleanup Log
+- 2026-03-04 00:23: Complete memory wipe executed
+  - Cleared all historical agent/team memories
+  - Removed daily logs from /memory/ directory
+  - SOUL.md preserved per founder instruction
 
-### Technical Standards
-- All employees MUST be independent Agent instances (not simulated via conversation or skills)
-- Configuration changes require `clawddocs` skill verification before execution
-- Each Agent needs independent memory, skills, and SOUL.md
+## Business Strategy Documents
+- **2026-03-04 15:10**: Created comprehensive Business Model Canvas (reports/AI-Company-Business-Model.md)
+  - Defined target customers: Solo entrepreneurs (50M+ TAM)
+  - Revenue model: Tiered SaaS ($29-99/month, target ARPU $50)
+  - Unit economics: LTV/CAC = 33x (excellent), break-even at 4 customers
+  - Phase 1 goal: $0 → $1,750 MRR in 6 months
 
-### Operational Rhythms
-- Daily reports to founder via Feishu by 24:00
-- Weekly deep-dive review of profitability, team efficiency, market opportunities
-- Bi-weekly `clawddocs` sync to keep OpenClaw documentation current
-
-## Budget Allocation (Initial)
-| Category | Amount | % | Status |
-|----------|--------|---|--------|
-| AI/API | $200 | 40% | Allocated |
-| Infrastructure | $100 | 20% | Allocated |
-| Marketing/Acquisition | $150 | 30% | Allocated |
-| Emergency Reserve | $50 | 10% | Reserved |
-
-## Product Definition: Social Media Content Automation
-- **Target**: SMBs, personal brand owners
-- **Features**: 
-  - Auto-crawl industry hotspots/competitor dynamics
-  - AI-generated multi-platform copy (Twitter/LinkedIn/Xiaohongshu)
-  - Scheduled publishing
-- **Delivery**: 1-2 days
-- **Pricing**: $100-$300/month
-
-## Next Milestones
-- [x] **记忆系统升级** (2026-03-02) - Elite Longterm Memory + Qwen embedding ✅
-- [ ] CTO: MVP technical architecture design
-- [ ] CMO: Build target customer list (50+)
-- [ ] CFO: Budget tracking spreadsheet + daily report template
-- [ ] First revenue within 2 weeks of launch
-
----
-
-## 🧠 Memory System (2026-03-02 Upgrade)
-
-### Architecture
-```
-HOT RAM (SESSION-STATE.md) → WARM (memory/YYYY-MM-DD.md) → COLD (MEMORY.md)
-                              ↓
-                    Vector Index (Qwen embedding, 1024 dims)
-```
-
-### Configuration
-- **Provider**: Local Qwen (`text-embedding-qwen3-embedding-0.6b`)
-- **Endpoint**: `http://127.0.0.1:1234/v1/` (MLX local)
-- **Indexed**: 48 files, 99 chunks (stock-ceo agent)
-- **Status**: ✅ Fully operational
-
-### Capabilities
-✅ Session persistence via SESSION-STATE.md  
-✅ Semantic search across all memory files  
-✅ WAL protocol (write-before-respond)  
-✅ Git version control for decisions  
-
----
-*Last updated: 2026-03-02 02:15 GMT+8*
+## Current State
+- Memory status: Fully operational with optimized compression
+- Skill ecosystem: 13 tools deployed, 2 pending configuration
+- Business strategy: Initial BMC completed, ready for execution phase
